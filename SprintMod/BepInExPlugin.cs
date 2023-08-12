@@ -22,7 +22,7 @@ namespace SprintMod
         public static ConfigEntry<bool> sprinting;
         public static InputAction action;
         public static ConfigEntry<float> sprintSpeedMult;
-        public static ConfigEntry<int> sprintCost;
+        //public static ConfigEntry<int> sprintCost;
         public static ConfigEntry<string> sprintKey;
 
         public static float timePassed;
@@ -56,7 +56,7 @@ namespace SprintMod
             sprintKey = Config.Bind<string>("General", "SprintButton", "<Keyboard>/leftShift", "Use this key to sprint");
             sprintSpeedMult = Config.Bind<float>("General", "SprintSpeedMult", 2f, "Sprint speed multiplier");
             toggleSprint = Config.Bind<bool>("General", "ToggleSprint", false, "Toggle sprint");
-            sprintCost = Config.Bind<int>("General", "sprintCost", 1, "Energy cost per second of sprinting");
+            //sprintCost = Config.Bind<int>("General", "sprintCost", 1, "Energy cost per second of sprinting");
             sprinting = Config.Bind<bool>("ZZ_Auto", "sprinting", false, "Is sprinting");
 
             action = new InputAction(binding: sprintKey.Value);
@@ -113,6 +113,7 @@ namespace SprintMod
 
             if (modEnabled.Value && ((!toggleSprint.Value && action.IsPressed()) || (toggleSprint.Value && sprinting.Value)))
             {
+                /*
                 if (sprintCost.Value > 0)
                 {
                     timePassed += Time.deltaTime;
@@ -122,6 +123,7 @@ namespace SprintMod
                         timePassed = 0;
                     }
                 }
+                */
                 return movementSpeed * sprintSpeedMult.Value;
             }
             return movementSpeed;
