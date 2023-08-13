@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SprintMod", "SprintMod\Spri
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeSpeedMod", "TimeSpeedMod\TimeSpeedMod.csproj", "{42081623-BC85-404B-AE0B-763B99E9207F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomTextures", "CustomTextures\CustomTextures.csproj", "{A3C0FDC7-0678-4BA6-A6ED-6DF3A0817D1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{42081623-BC85-404B-AE0B-763B99E9207F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42081623-BC85-404B-AE0B-763B99E9207F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42081623-BC85-404B-AE0B-763B99E9207F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3C0FDC7-0678-4BA6-A6ED-6DF3A0817D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C0FDC7-0678-4BA6-A6ED-6DF3A0817D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C0FDC7-0678-4BA6-A6ED-6DF3A0817D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C0FDC7-0678-4BA6-A6ED-6DF3A0817D1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

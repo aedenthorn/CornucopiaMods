@@ -34,25 +34,10 @@ namespace TimeSpeedMod
 
         private Harmony harmony;
 
-        public static Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
         public static void Dbgl(string str = "", bool pref = true)
         {
             Debug.Log((pref ? typeof(BepInExPlugin).Namespace + " " : "") + str);
         }
-        public static string GetAssetPath(object obj, bool create = false)
-        {
-            return GetAssetPath(obj.GetType().Namespace, create);
-        }
-        public static string GetAssetPath(string name, bool create = false)
-        {
-            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), name);
-            if (create && !Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-            return path;
-        }
-
         private void Awake()
         {
 
@@ -79,7 +64,6 @@ namespace TimeSpeedMod
             return;
         }
 
-        // exp
 
         [HarmonyPatch(typeof(Inventory), "Update")]
         static class Inventory_Update_Patch

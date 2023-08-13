@@ -29,23 +29,9 @@ namespace SprintMod
 
         private Harmony harmony;
 
-        public static Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
         public static void Dbgl(string str = "", bool pref = true)
         {
             Debug.Log((pref ? typeof(BepInExPlugin).Namespace + " " : "") + str);
-        }
-        public static string GetAssetPath(object obj, bool create = false)
-        {
-            return GetAssetPath(obj.GetType().Namespace, create);
-        }
-        public static string GetAssetPath(string name, bool create = false)
-        {
-            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), name);
-            if (create && !Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-            return path;
         }
 
         private void Awake()
@@ -64,17 +50,7 @@ namespace SprintMod
 
             harmony = Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), null);
             Dbgl("Plugin awake");
-            return;
-            var path = GetAssetPath(this, true);
-            foreach(var f in Directory.GetFiles(path, "*.*", SearchOption.AllDirectories))
-            {
-                Texture2D tex = new Texture2D(1,1);
-                tex.LoadImage(File.ReadAllBytes(f));
-                textures[Path.GetFileNameWithoutExtension(f)] = tex;
-            }
         }
-
-        // exp
 
         [HarmonyPatch(typeof(ExampleCharacterController), nameof(ExampleCharacterController.UpdateVelocity))]
         static class ExampleCharacterController_UpdateVelocity_Patch
